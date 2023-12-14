@@ -1,31 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
-    <title>Teste</title>
-    
-    <!--Template based on URL below-->
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/starter-template/">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="shortcut icon" href="http://html5-training-in-hyderabad.blogspot.com.br/favicon.ico">
+    <link rel="shortcut icon" href="https://www.djangoproject.com/favicon.ico">
+    <link rel="shortcut icon" href="https://alpinejs.dev/favicon.png">
+    <title>Serviço</title>
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Bootstrap core CSS -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 
-    <!-- Place your stylesheet here-->
-    <link href="/css/stylesheet.css" rel="stylesheet" type="text/css">
 
-    <!--Alpine.js-->
-    <script src="//unpkg.com/alpinejs" defer></script>
-</head>
+  <!-- Font-awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<body>
-<h1>Menu superior</h1>
-  {% block content %} Paragrafo principal{% endblock content %}   
+  <!-- Alpine Plugins -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/mask@3.x.x/dist/cdn.min.js"></script>
 
-  {% block js %} {% endblock js %}
-</body>
-</html
+  <!-- Alpine Core -->
+    <script defer src="//unpkg.com/alpinejs" defer></script>
+
+    {% block css %}{% endblock css %}
+
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Site em Manutenção</h1>
+          <h2>Menu superior</h2>
+            <p>
+              <a href="{% url 'servico:ordem_servico_list' %}">Ordens de serviços</a>
+            </p>
+        </div>
+        <div class="col-md-12">
+          {% block content %}
+            <p> Parágrafo Principal</p>
+        {% endblock content %}
+        </div>
+      </div>
+    </div>
+
+    {% block js %}{% endblock js %}
+  </body>
+
+</html>
